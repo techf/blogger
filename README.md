@@ -1,1 +1,1 @@
-Blogger2 execise following from http://tutorials.jumpstartlab.com/
+Blogger2 exercise following from http://tutorials.jumpstartlab.com/
