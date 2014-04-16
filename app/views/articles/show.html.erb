@@ -1,5 +1,11 @@
 <h2><%= @article.title %></h2>
 <p><%= @article.body %></p>
+<em><%= distance_of_time_in_words_to_now(@article.created_at) %></em><br>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Really delete the article?" } %><br>
+
+<h3><%= pluralize(@article.comments.count, 'Comment') %></h3>
+<%= render partial: 'articles/comment', collection: @article.comments.order(:created_at).reverse_order %>
+
+<%= render partial: 'comments/form' %>
 <%= link_to "<< Back to Articles List", articles_path %>

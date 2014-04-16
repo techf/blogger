@@ -7,6 +7,9 @@ class ArticlesController < ApplicationController
 	def show
 	#	render json: params	
 		@article = Article.find(params[:id])	
+	#create a new comment for an article 
+		@comment = Comment.new
+		@comment.article_id = @article.id
 	end
 
 	def new
